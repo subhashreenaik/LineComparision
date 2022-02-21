@@ -19,6 +19,19 @@ public class LineComparision {
  	 
   }
 	
+	//check equality using equal and compareTo method
+	public void checkEquality(String s1,String s2) {
+		if(s1.equals(s2)) {
+	    	   System.out.println("Two line are equal");
+	       }
+	       else if(s1.compareTo(s2)>0){
+     	   System.out.println("length of line1 is greater than line2");
+        }
+	       else {
+	    	   System.out.println("length of line2 is greater than line1");
+	       }
+	}
+	
   public static void main(String[] args) {
 	 
 	   //Taking inputs from system
@@ -41,18 +54,15 @@ public class LineComparision {
 	       double length1 = calculateLengthLine(x1,x2,y1,y2);
 	       double length2 = calculateLengthLine(x3,x4,y3,y4);
 	       
-	       //check equality
-	       if(length1 == length2) {
-	    	   System.out.println("Two line are equal");
-	       }
-	       else if(length1>length2){
-        	   System.out.println("length of line1 is greater than line2");
-           }
-	       else {
-	    	   System.out.println("length of line2 is greater than line1");
-	       }
+	       //converting double to string
+	       String s1=String.valueOf(length1);
+	       String s2=String.valueOf(length2);
 	       
-	    scan.close();
+	       LineComparision compare =new LineComparision();
+	       compare.checkEquality(s1, s2);
+	       
+	            
+	       scan.close();
 	       
  }
 
